@@ -1,23 +1,52 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 /**
  * Tarjeta editorial principal: degradado verde pizarra → carbón,
- * calidez dorada apagada a la izquierda y brillo que sigue al cursor.
+ * calidez dorada apagada a la izquierda y brillo tipo linterna que sigue
+ * al cursor (ratón) o al dedo (móvil).
  */
 export default function Card({ children, className = '' }) {
   const ref = useRef(null)
+  const hideTimer = useRef(null)
   const [glow, setGlow] = useState({ x: 0, y: 0, visible: false })
 
-  const handleMove = (e) => {
+  const showAt = (clientX, clientY) => {
+    clearTimeout(hideTimer.current)
     const rect = ref.current.getBoundingClientRect()
-    setGlow({ x: e.clientX - rect.left, y: e.clientY - rect.top, visible: true })
+    setGlow({ x: clientX - rect.left, y: clientY - rect.top, visible: true })
   }
+  const hide = (delay = 0) => {
+    clearTimeout(hideTimer.current)
+    hideTimer.current = setTimeout(() => setGlow((g) => ({ ...g, visible: false })), delay)
+  }
+
+  // En móvil el navegador cancela los eventos "pointer" al empezar a hacer scroll,
+  // así que seguimos el dedo con eventos táctiles (pasivos, no bloquean el scroll).
+  useEffect(() => {
+    const el = ref.current
+    const onTouch = (e) => {
+      const t = e.touches[0]
+      if (t) showAt(t.clientX, t.clientY)
+    }
+    const onTouchEnd = () => hide(1200) // la luz se queda un momento y se apaga suave
+    el.addEventListener('touchstart', onTouch, { passive: true })
+    el.addEventListener('touchmove', onTouch, { passive: true })
+    el.addEventListener('touchend', onTouchEnd, { passive: true })
+    el.addEventListener('touchcancel', onTouchEnd, { passive: true })
+    return () => {
+      el.removeEventListener('touchstart', onTouch)
+      el.removeEventListener('touchmove', onTouch)
+      el.removeEventListener('touchend', onTouchEnd)
+      el.removeEventListener('touchcancel', onTouchEnd)
+      clearTimeout(hideTimer.current)
+    }
+  }, [])
 
   return (
     <div
       ref={ref}
-      onPointerMove={handleMove}
-      onPointerLeave={() => setGlow((g) => ({ ...g, visible: false }))}
+      onPointerMove={(e) => e.pointerType !== 'touch' && showAt(e.clientX, e.clientY)}
+      onPointerLeave={(e) => e.pointerType !== 'touch' && hide()}
       className={`relative isolate min-h-svh w-full overflow-hidden
         bg-gradient-to-br from-[#1a2426] via-[#151c1d] to-[#121617] ${className}`}
     >
