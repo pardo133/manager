@@ -29,7 +29,7 @@ export default function Contacto() {
             <input name="email" type="email" required placeholder="Email" className={input} />
           </div>
           <input name="asunto" placeholder="Asunto (p. ej. contratación, fecha, ciudad)" className={input} />
-          <textarea name="mensaje" required rows={5} placeholder="Mensaje" className={`${input} resize-none rounded-3xl`} />
+          <textarea name="mensaje" required rows={5} placeholder="Mensaje" className={`${input.replace('rounded-full', 'rounded-none')} resize-none`} />
           <button
             type="submit"
             className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-white px-8 font-santa text-xl leading-none text-black shadow-lg transition-transform hover:scale-[1.02] active:scale-95 sm:w-auto"
