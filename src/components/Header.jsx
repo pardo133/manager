@@ -17,7 +17,7 @@ export default function Header({ compact = false }) {
 
       <Link to="/" className="min-w-0">
         <h1
-          className={`font-normal leading-[1.25] text-white ${
+          className={`font-santa font-normal leading-[1.25] text-white ${
             compact
               ? 'text-2xl sm:text-2xl md:text-3xl'
               : 'text-[clamp(1.9rem,9.5vw,2.4rem)] sm:text-5xl md:text-6xl lg:text-[4.6rem] 2xl:text-[5.6rem] [@media(max-height:500px)]:text-4xl'

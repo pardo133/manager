@@ -18,10 +18,19 @@
   font-display: swap;
 }
 
+/* Santa Natale — licencia SOLO USO PERSONAL: comprar licencia comercial antes de publicar */
+@font-face {
+  font-family: "Santa Natale";
+  src: url("./assets/fonts/SantaNatale.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-script: "Rasley Heights", "Avermont House", ui-serif, Georgia, serif;
+  --font-santa: "Santa Natale", "Avermont House", ui-serif, Georgia, serif;
   --font-display: "Avermont House", "Playfair Display", ui-serif, Georgia, serif;
 }
 

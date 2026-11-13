@@ -24,7 +24,7 @@ export default function Eventos() {
               <h3 className="truncate text-lg font-medium">{e.titulo}</h3>
               <p className="truncate text-sm font-light text-white/50">{e.artista} · {e.lugar}</p>
             </div>
-            <a href="#" className="hidden min-h-11 items-center rounded-full bg-white/10 px-5 font-display text-[1.35rem] leading-none text-white/80 transition-all hover:scale-105 hover:bg-white hover:text-black sm:inline-flex">
+            <a href="#" className="hidden min-h-11 items-center rounded-full bg-white/10 px-5 font-santa text-[1.35rem] leading-none text-white/80 transition-all hover:scale-105 hover:bg-white hover:text-black sm:inline-flex">
               Entradas
             </a>
           </li>

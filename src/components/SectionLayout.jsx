@@ -17,7 +17,7 @@ export default function SectionLayout({ eyebrow, title, intro, children }) {
         <div className="mt-6 flex flex-wrap items-center gap-2 sm:mt-8">
           <Link
             to="/"
-            className="inline-flex min-h-11 items-center gap-2 rounded-full bg-white px-5 font-display text-[1.35rem] leading-none text-black shadow-lg transition-transform hover:scale-105 active:scale-95"
+            className="inline-flex min-h-11 items-center gap-2 rounded-full bg-white px-5 font-santa text-[1.35rem] leading-none text-black shadow-lg transition-transform hover:scale-105 active:scale-95"
           >
             <span aria-hidden>←</span> Inicio
           </Link>
