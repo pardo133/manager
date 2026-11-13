@@ -12,12 +12,8 @@ const IMG_H = 2528
  */
 const LEAVES = [
   [64, 17.5, 36, 7.5, 'wind-a', 0], //    guirnalda superior de la ventana
-  [67, 24, 8.5, 41, 'wind-b', -1.3], //   lateral izquierdo de la ventana
-  [94.5, 19, 5.5, 46, 'wind-a', -2.1], // lateral derecho
-  [69, 62, 31, 4.5, 'wind-c', -0.7], //   alféizar
-  [71, 65.5, 20, 12, 'wind-b', -2.8], //  hiedra que cuelga bajo la ventana
-  [59, 37, 9.5, 11, 'wind-c', -1.8], //   hojas sueltas en la pared
-  [0, 71, 28, 10, 'wind-a', -3.4], //     hojas del suelo
+  [67, 24, 8.5, 13, 'wind-b', -1.3], //   parte alta del lateral izquierdo
+  [94.5, 19, 5.5, 20, 'wind-a', -2.1], // parte alta del lateral derecho
 ]
 
 /**
