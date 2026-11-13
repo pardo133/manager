@@ -50,8 +50,8 @@ html, body, #root {
 
 @keyframes leaf-sway {
   0%, 100% { transform: rotate(0deg) translateX(0); }
-  30%      { transform: rotate(0.15deg) translateX(0.5px); }
-  65%      { transform: rotate(-0.1deg) translateX(-0.5px); }
+  30%      { transform: rotate(0.08deg) translateX(0.3px); }
+  65%      { transform: rotate(-0.06deg) translateX(-0.3px); }
 }
 
 .scene-fade-in {

@@ -85,9 +85,9 @@ export default function SceneBackground({ focusX = 0.62, focusY = 0.42, classNam
 /** Filtros SVG: ruido animado que desplaza los píxeles como si soplara brisa. */
 function WindFilters() {
   const filters = [
-    ['wind-a', '0.012 0.03', '0.012 0.03;0.018 0.045;0.012 0.03', '7s', 3],
-    ['wind-b', '0.015 0.025', '0.015 0.025;0.011 0.04;0.015 0.025', '9s', 2.5],
-    ['wind-c', '0.02 0.035', '0.02 0.035;0.014 0.025;0.02 0.035', '6s', 2],
+    ['wind-a', '0.012 0.03', '0.012 0.03;0.018 0.045;0.012 0.03', '7s', 1.8],
+    ['wind-b', '0.015 0.025', '0.015 0.025;0.011 0.04;0.015 0.025', '9s', 1.5],
+    ['wind-c', '0.02 0.035', '0.02 0.035;0.014 0.025;0.02 0.035', '6s', 1.2],
   ]
   return (
     <svg width="0" height="0" className="absolute">
