@@ -19,8 +19,8 @@ export default function Header({ compact = false }) {
         <h1
           className={`font-santa font-normal leading-[1.25] text-white ${
             compact
-              ? 'text-2xl sm:text-2xl md:text-3xl'
-              : 'text-[clamp(1.9rem,9.5vw,2.4rem)] sm:text-5xl md:text-6xl lg:text-[4.6rem] 2xl:text-[5.6rem] [@media(max-height:500px)]:text-4xl'
+              ? 'text-xl sm:text-xl md:text-[1.6rem]'
+              : 'text-[clamp(1.6rem,8vw,2rem)] sm:text-[2.6rem] md:text-5xl lg:text-[3.9rem] 2xl:text-[4.75rem] [@media(max-height:500px)]:text-3xl'
           }`}
         >
           Jesús Abraham
