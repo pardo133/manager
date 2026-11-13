@@ -12,7 +12,7 @@ const IMG_H = 2528
  */
 const LEAVES = [
   [64, 17.5, 36, 7.5, 'wind-a', 0], //    guirnalda superior de la ventana
-  [67, 24, 8.5, 13, 'wind-b', -1.3], //   parte alta del lateral izquierdo (la baja, junto al piano, queda quieta)
+  [67, 24, 8.5, 26, 'wind-b', -1.3], //   lateral izquierdo, zona alta y media (la baja, junto al piano, queda quieta)
   [94.5, 19, 5.5, 46, 'wind-d', -2.1], // lateral derecho completo
   [74, 62, 26, 4.5, 'wind-d', -0.7], //   alféizar (sin la esquina junto al piano)
   [74, 65.5, 18, 12, 'wind-d', -2.8], //  hiedra que cuelga bajo la ventana
