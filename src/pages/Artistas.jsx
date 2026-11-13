@@ -27,10 +27,10 @@ export default function Artistas() {
             </div>
             <div className="flex items-end justify-between gap-3 p-5">
               <div>
-                <h3 className="text-lg font-medium">{a.nombre}</h3>
-                <p className="mt-1 text-sm font-light text-white/50">{a.disciplina}</p>
+                <h3 className="font-script text-4xl leading-tight font-normal">{a.nombre}</h3>
+                <p className="mt-2 text-sm font-light text-white/50">{a.disciplina}</p>
               </div>
-              <button className="min-h-11 shrink-0 rounded-full bg-white/10 px-4 text-sm text-white/80 transition-all hover:scale-105 hover:bg-white hover:text-black active:scale-105 active:bg-white active:text-black">
+              <button className="min-h-11 shrink-0 rounded-full bg-white/10 px-4 font-display text-[1.35rem] leading-none text-white/80 transition-all hover:scale-105 hover:bg-white hover:text-black active:scale-105 active:bg-white active:text-black">
                 Ver ficha
               </button>
             </div>

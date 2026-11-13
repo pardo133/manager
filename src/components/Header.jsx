@@ -17,10 +17,10 @@ export default function Header({ compact = false }) {
 
       <Link to="/" className="min-w-0">
         <h1
-          className={`font-semibold leading-[1.05] tracking-tight text-white ${
+          className={`font-normal leading-[1.25] text-white ${
             compact
               ? 'text-xl sm:text-2xl md:text-3xl'
-              : 'text-[1.75rem] sm:text-4xl md:text-5xl lg:text-[3.4rem]'
+              : 'text-[1.9rem] sm:text-5xl md:text-6xl lg:text-[4.6rem]'
           }`}
         >
           Jesús Abraham

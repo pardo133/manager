@@ -35,11 +35,11 @@ export default function Home() {
                   <Link
                     to={item.to}
                     onPointerEnter={() => setHovered(i)}
-                    className="inline-block origin-left py-1 text-lg font-medium tracking-tight text-white/85
+                    className="inline-block origin-left py-1 font-display text-2xl text-white/85
                       transition-all duration-300 ease-out select-none
                       hover:scale-110 hover:text-[#d4b47a] hover:drop-shadow-[0_0_12px_rgba(212,180,122,0.35)]
                       focus-visible:scale-110 focus-visible:text-[#d4b47a] focus-visible:outline-none
-                      sm:text-xl"
+                      sm:text-3xl"
                   >
                     {item.label}
                   </Link>

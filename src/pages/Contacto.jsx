@@ -32,7 +32,7 @@ export default function Contacto() {
           <textarea name="mensaje" required rows={5} placeholder="Mensaje" className={`${input} resize-none rounded-3xl`} />
           <button
             type="submit"
-            className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-white px-8 font-medium text-black shadow-lg transition-transform hover:scale-[1.02] active:scale-95 sm:w-auto"
+            className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-white px-8 font-display text-xl leading-none text-black shadow-lg transition-transform hover:scale-[1.02] active:scale-95 sm:w-auto"
           >
             {enviado ? 'Abriendo tu correo…' : 'Enviar'} <span aria-hidden>→</span>
           </button>
@@ -56,7 +56,7 @@ export default function Contacto() {
                   href={r.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex min-h-11 items-center rounded-full bg-white/10 px-5 text-sm text-white/80 backdrop-blur-md transition-all hover:scale-105 hover:bg-white hover:text-black active:scale-105 active:bg-white active:text-black"
+                  className="inline-flex min-h-11 items-center rounded-full bg-white/10 px-5 font-display text-[1.35rem] leading-none text-white/80 backdrop-blur-md transition-all hover:scale-105 hover:bg-white hover:text-black active:scale-105 active:bg-white active:text-black"
                 >
                   {r.label}
                 </a>
