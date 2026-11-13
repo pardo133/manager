@@ -20,13 +20,13 @@ export default function Header({ compact = false }) {
           className={`font-normal leading-[1.25] text-white ${
             compact
               ? 'text-xl sm:text-2xl md:text-3xl'
-              : 'text-[1.9rem] sm:text-5xl md:text-6xl lg:text-[4.6rem]'
+              : 'text-[1.9rem] sm:text-5xl md:text-6xl lg:text-[4.6rem] 2xl:text-[5.6rem] [@media(max-height:500px)]:text-4xl'
           }`}
         >
           Jesús Abraham
           <br className="sm:hidden" /> Mendoza Palacios
         </h1>
-        <p className="mt-2 text-xs font-light tracking-[0.18em] text-white/55 uppercase sm:mt-3 sm:text-sm">
+        <p className="mt-2 text-xs font-light tracking-[0.18em] text-white/55 uppercase sm:mt-3 sm:text-sm lg:text-base 2xl:text-lg">
           Artist Management &amp; Creative Consulting
         </p>
       </Link>

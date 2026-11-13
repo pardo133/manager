@@ -36,9 +36,11 @@ export default function SceneBackground({ focusX = 0.62, focusY = 0.42, classNam
       // En pantallas verticales (móvil) se recorta mucho de ancho: desplazamos el encuadre
       // a la derecha para que se vean el piano y la ventana enteros.
       const fx = w / h < 0.62 ? 0.8 : focusX
+      // En pantallas anchas se recorta mucho de alto: bajamos el encuadre para ver el piano entero
+      const fy = w / h > 1.4 ? 0.5 : focusY
       const sw = IMG_W * scale
       const sh = IMG_H * scale
-      setBox({ width: sw, height: sh, left: (w - sw) * fx, top: (h - sh) * focusY })
+      setBox({ width: sw, height: sh, left: (w - sw) * fx, top: (h - sh) * fy })
     }
     update()
     const ro = new ResizeObserver(update)
