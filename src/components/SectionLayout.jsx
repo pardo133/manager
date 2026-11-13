@@ -11,7 +11,7 @@ export default function SectionLayout({ eyebrow, title, intro, children }) {
   const { pathname } = useLocation()
   return (
     <Page>
-      <Card className="p-5 sm:p-8 md:p-12">
+      <Card className="p-5 sm:p-8 md:p-12 lg:px-20 lg:py-14">
         <Header compact />
 
         <div className="mt-6 flex flex-wrap items-center gap-2 sm:mt-8">

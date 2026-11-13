@@ -12,7 +12,7 @@ export default function Home() {
 
   return (
     <Page>
-      <Card className="flex min-h-[calc(100svh-2rem)] flex-col p-5 sm:min-h-[calc(100svh-4rem)] sm:p-8 md:p-12 lg:min-h-[720px]">
+      <Card className="flex flex-col p-5 sm:p-8 md:p-12 lg:px-20 lg:py-14">
         <SceneBackground className="-z-20" />
         <Header />
 

@@ -18,9 +18,8 @@ export default function Card({ children, className = '' }) {
       ref={ref}
       onPointerMove={handleMove}
       onPointerLeave={() => setGlow((g) => ({ ...g, visible: false }))}
-      className={`relative isolate overflow-hidden rounded-3xl border border-white/[0.06]
-        bg-gradient-to-br from-[#1a2426] via-[#151c1d] to-[#121617]
-        shadow-[0_40px_120px_-30px_rgba(0,0,0,0.8)] ${className}`}
+      className={`relative isolate min-h-svh w-full overflow-hidden
+        bg-gradient-to-br from-[#1a2426] via-[#151c1d] to-[#121617] ${className}`}
     >
       {/* Toque cálido/dorado apagado en el lado izquierdo */}
       <div
