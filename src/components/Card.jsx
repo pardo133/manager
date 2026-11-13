@@ -28,13 +28,12 @@ export default function Card({ children, className = '' }) {
       const t = e.touches[0]
       if (t) showAt(t.clientX, t.clientY, true)
     }
-    const onTouchEnd = () => hide(1200) // la luz se queda un momento y se apaga suave
-    el.addEventListener('touchstart', onTouch, { passive: true })
+    // Solo aparece al arrastrar el dedo; al soltarlo se apaga (con el fundido de opacidad)
+    const onTouchEnd = () => hide()
     el.addEventListener('touchmove', onTouch, { passive: true })
     el.addEventListener('touchend', onTouchEnd, { passive: true })
     el.addEventListener('touchcancel', onTouchEnd, { passive: true })
     return () => {
-      el.removeEventListener('touchstart', onTouch)
       el.removeEventListener('touchmove', onTouch)
       el.removeEventListener('touchend', onTouchEnd)
       el.removeEventListener('touchcancel', onTouchEnd)
