@@ -21,7 +21,7 @@ export default function SectionLayout({ eyebrow, title, intro, children }) {
           >
             <span aria-hidden>←</span> Inicio
           </Link>
-          <nav className="flex gap-2 overflow-x-auto [scrollbar-width:none]">
+          <nav className="flex flex-wrap gap-2">
             {NAV.map((n) => (
               <Pill
                 key={n.to}

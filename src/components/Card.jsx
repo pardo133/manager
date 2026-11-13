@@ -8,12 +8,12 @@ import { useEffect, useRef, useState } from 'react'
 export default function Card({ children, className = '' }) {
   const ref = useRef(null)
   const hideTimer = useRef(null)
-  const [glow, setGlow] = useState({ x: 0, y: 0, visible: false })
+  const [glow, setGlow] = useState({ x: 0, y: 0, visible: false, touch: false })
 
-  const showAt = (clientX, clientY) => {
+  const showAt = (clientX, clientY, touch = false) => {
     clearTimeout(hideTimer.current)
     const rect = ref.current.getBoundingClientRect()
-    setGlow({ x: clientX - rect.left, y: clientY - rect.top, visible: true })
+    setGlow({ x: clientX - rect.left, y: clientY - rect.top, visible: true, touch })
   }
   const hide = (delay = 0) => {
     clearTimeout(hideTimer.current)
@@ -26,7 +26,7 @@ export default function Card({ children, className = '' }) {
     const el = ref.current
     const onTouch = (e) => {
       const t = e.touches[0]
-      if (t) showAt(t.clientX, t.clientY)
+      if (t) showAt(t.clientX, t.clientY, true)
     }
     const onTouchEnd = () => hide(1200) // la luz se queda un momento y se apaga suave
     el.addEventListener('touchstart', onTouch, { passive: true })
@@ -68,7 +68,7 @@ export default function Card({ children, className = '' }) {
         className="pointer-events-none absolute inset-0 -z-10 transition-opacity duration-500"
         style={{
           opacity: glow.visible ? 1 : 0,
-          background: `radial-gradient(420px circle at ${glow.x}px ${glow.y}px, rgba(255,255,255,0.07), transparent 60%)`,
+          background: `radial-gradient(${glow.touch ? 220 : 420}px circle at ${glow.x}px ${glow.y}px, rgba(255,255,255,0.07), transparent 60%)`,
         }}
       />
 

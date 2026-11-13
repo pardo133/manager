@@ -33,9 +33,12 @@ export default function SceneBackground({ focusX = 0.62, focusY = 0.42, classNam
     const update = () => {
       const { width: w, height: h } = el.getBoundingClientRect()
       const scale = Math.max(w / IMG_W, h / IMG_H)
+      // En pantallas verticales (móvil) se recorta mucho de ancho: desplazamos el encuadre
+      // a la derecha para que se vean el piano y la ventana enteros.
+      const fx = w / h < 0.62 ? 0.8 : focusX
       const sw = IMG_W * scale
       const sh = IMG_H * scale
-      setBox({ width: sw, height: sh, left: (w - sw) * focusX, top: (h - sh) * focusY })
+      setBox({ width: sw, height: sh, left: (w - sw) * fx, top: (h - sh) * focusY })
     }
     update()
     const ro = new ResizeObserver(update)
@@ -72,7 +75,7 @@ export default function SceneBackground({ focusX = 0.62, focusY = 0.42, classNam
       )}
 
       {/* Velos oscuros para que el texto y las píldoras se lean bien */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0d1112]/90 via-[#0d1112]/40 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0d1112]/65 via-[#0d1112]/25 to-transparent md:from-[#0d1112]/90 md:via-[#0d1112]/40" />
       <div className="absolute inset-0 bg-gradient-to-t from-[#0d1112]/80 via-transparent to-[#0d1112]/50" />
 
       {/* Polvo flotando en los haces de luz */}
