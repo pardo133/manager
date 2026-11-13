@@ -4,7 +4,17 @@ import SectionLayout from '../components/SectionLayout'
 // Sustituye por los datos reales
 const TELEFONO = '+34 622 57 88 52'
 const EMAIL = 'contratacion@ejemplo.com'
-const REDES = [{ label: 'Instagram', href: 'https://www.instagram.com/jesus_nk/' }]
+const REDES = [{ label: 'Instagram', href: 'https://www.instagram.com/jesus_nk/', icon: InstagramIcon }]
+
+function InstagramIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5 shrink-0" aria-hidden>
+      <rect x="2" y="2" width="20" height="20" rx="5.5" />
+      <circle cx="12" cy="12" r="4.5" />
+      <circle cx="17.6" cy="6.4" r="1" fill="currentColor" stroke="none" />
+    </svg>
+  )
+}
 
 const input =
   'w-full rounded-full bg-white/[0.06] px-6 py-3.5 text-base text-white placeholder:text-white/35 ring-1 ring-white/10 outline-none backdrop-blur-md transition-all focus:bg-white/10 focus:ring-white/40'
@@ -56,8 +66,9 @@ export default function Contacto() {
                   href={r.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex min-h-11 items-center rounded-full bg-white/10 px-5 font-santa text-[1.35rem] leading-none text-white/80 backdrop-blur-md transition-all hover:scale-105 hover:bg-white hover:text-black active:scale-105 active:bg-white active:text-black"
+                  className="inline-flex min-h-11 items-center gap-2 rounded-full bg-white/10 px-5 font-santa text-[1.35rem] leading-none text-white/80 backdrop-blur-md transition-all hover:scale-105 hover:bg-white hover:text-black active:scale-105 active:bg-white active:text-black"
                 >
+                  {r.icon && <r.icon />}
                   {r.label}
                 </a>
               ))}
