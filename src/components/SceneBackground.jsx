@@ -14,6 +14,8 @@ const LEAVES = [
   [64, 17.5, 36, 7.5, 'wind-a', 0], //    guirnalda superior de la ventana
   [67, 24, 8.5, 13, 'wind-b', -1.3], //   parte alta del lateral izquierdo
   [94.5, 19, 5.5, 20, 'wind-d', -2.1], // parte alta del lateral derecho (algo más de viento)
+  [80, 62, 20, 4.5, 'wind-d', -0.7], //  alféizar, mitad derecha
+  [76, 65.5, 16, 12, 'wind-d', -2.8], // hiedra que cuelga bajo la ventana (derecha)
 ]
 
 /**
